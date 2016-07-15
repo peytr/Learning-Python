@@ -1,0 +1,43 @@
+'''This code will calculate the area of a shape chosen by the user.
+The user has the opton to choose between a Circle, Triangle or Rectangle.'''
+
+import time
+from math import pi
+from datetime import datetime
+
+now = datetime.now()
+
+print("The calculator is starting up!")
+
+print"%s/%s/%s %s:%s" % (now.month, now.day, now.year, now.hour, now.minute)
+
+time.sleep(2)
+
+hint = "\nDon't forget to include the correct units! \nExiting..."
+
+option = raw_input("Enter C for Circle, T for Triangle or R for Rectangle: ").upper()
+
+if option == "C":
+				radius = float(raw_input("Enter Radius: "))
+				area = pi * radius ** 2
+				print("The pie is baking...")
+				time.sleep(2)
+				print("%.2f" % area + hint)
+elif option == "T":
+				base = float(raw_input("Enter Base: "))
+				height = float(raw_input("Enter Height: "))
+				area = height * base / 2
+				print("Uni Bi Tri...")
+				time.sleep(2)
+				print("%.2f" % area + hint)
+elif option == "R":
+				length = float(raw_input("Enter Length: "))
+				height = float(raw_input("Enter Height: "))
+				area = length * height
+				print("Working on it...")
+				time.sleep(2)
+				print("%2.f" % area + hint)
+else:
+				print("You have entered garbage!")
+				time.sleep(1)  
+				print("The program will exit!")
