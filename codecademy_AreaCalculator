@@ -1,43 +1,51 @@
 '''This code will calculate the area of a shape chosen by the user.
 The user has the opton to choose between a Circle, Triangle or Rectangle.'''
+'''The code has now been updated with my own additions. 
+Changed hint, added instructions, removed datetime, changed input request,
+added Square calculation.'''
 
 import time
 from math import pi
-from datetime import datetime
 
-now = datetime.now()
-
+print("Use this calculator to calculate the area of a shape.")
+time.sleep(1)
 print("The calculator is starting up!")
-
-print"%s/%s/%s %s:%s" % (now.month, now.day, now.year, now.hour, now.minute)
-
+time.sleep(2)
+print("You will need at least one of the shapes dimensions in cm to continue")
 time.sleep(2)
 
-hint = "\nDon't forget to include the correct units! \nExiting..."
+exit = "\n\nExiting Program..."
 
-option = raw_input("Enter C for Circle, T for Triangle or R for Rectangle: ").upper()
+option = raw_input("Enter C for Circle, T for Triangle, R for Rectangle or S for Square: ").upper()
 
 if option == "C":
-				radius = float(raw_input("Enter Radius: "))
+				radius = float(raw_input("Enter the Circle Radius in cm: "))
 				area = pi * radius ** 2
-				print("The pie is baking...")
+				print("The Pi is baking...")
 				time.sleep(2)
-				print("%.2f" % area + hint)
+				print("\nThe area of your Circle is %.2f" % area + "cm" + exit)
 elif option == "T":
-				base = float(raw_input("Enter Base: "))
-				height = float(raw_input("Enter Height: "))
+				base = float(raw_input("Enter the Triangle Base in cm: "))
+				height = float(raw_input("Enter the Triangle Height in cm: "))
 				area = height * base / 2
-				print("Uni Bi Tri...")
+				print("Triangulating...")
 				time.sleep(2)
-				print("%.2f" % area + hint)
+				print("\nThe area of your Triangle is %.2f" % area + "cm" + exit)
 elif option == "R":
-				length = float(raw_input("Enter Length: "))
-				height = float(raw_input("Enter Height: "))
+				length = float(raw_input("Enter the Rectangle Length in cm: "))
+				height = float(raw_input("Enter the Rectangle Height in cm: "))
 				area = length * height
 				print("Working on it...")
 				time.sleep(2)
-				print("%2.f" % area + hint)
+				print("\nThe area of your Rectangle is %.2f" % area + "cm" + exit)
+elif option == "S":
+				length = float(raw_input("Enter the Square Length in cm: "))
+				height = float(raw_input("Enter the Square Height in cm: "))
+				area = length * height
+				print("Calculating....")
+				time.sleep(2)
+				print("\nThe area of your Square is %.2f" % area + "cm" + exit)
 else:
 				print("You have entered garbage!")
 				time.sleep(1)  
-				print("The program will exit!")
+				print("The program will now exit!")
