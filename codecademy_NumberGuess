@@ -35,4 +35,5 @@ def roll_dice(number_of_sides):
 			print("You Lose")
 			return
     
-roll_dice(6)
+numSides = int(raw_input("Enter how many side of the dice you would like: "))
+roll_dice(numSides)
