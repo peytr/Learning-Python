@@ -1,42 +1,38 @@
-'''Last code attempt before scrapping and starting agian'''
+'''A number guessing game'''
 
 from random import randint
-import time
+from time import sleep
 
 def get_user_guess():
   user_guess = int(raw_input("Guess a number: "))
-  return user_guess()
+  return user_guess
 
 def roll_dice(number_of_sides):
-  first_roll = randint(1, number_of_sides)
-  second_roll = randint(1, number_of_sides)
-  
-mval = number_of_sides * 2
-
-print "The maximum possible value is " + str(mval)
-
-time.sleep(1)
-
-user_guess = get_user_guess()
-
-if user_guess > mval:
-  print("Your guess is greater than the maximum value rolled")
-
-else:
-  print("Rolling...")
-  time.sleep(2)
-  print "First dice roll is %d" % (first_roll)
-  time.sleep(1)
-  print "Second dice roll is %d" % (second_roll)
-  time.sleep(1)
-  total_roll = first_roll + second_roll
-  print "The total rolled is %d" % (total_roll)
-  time.sleep(1)
-  
-if user_guess > total_roll:
-    print("Congratulations, You Win!")
-   
-else:
-  print("Sorry you lose")
-  
+	first_roll = randint(1, number_of_sides)
+	second_roll = randint(1, number_of_sides)
+	max_val = number_of_sides * 2
+	print "The maximum possible value is " + str(max_val)
+	sleep(1)
+	user_guess = get_user_guess()
+	if user_guess > max_val:
+		print("Your guess exceeds maximum that can be rolled")
+		return
+	else:
+		print("Rolling...")
+		sleep(2)
+		print "First Roll is %d" % (first_roll)
+		sleep(1)
+		print "Second Roll is %d" % (second_roll)
+		sleep(1)
+		total_roll = first_roll + second_roll
+		print "Total Roll is %d" % (total_roll)
+		print("Result...")
+		sleep(1)
+		if user_guess > total_roll:
+			print("You Win!")
+			return
+		else:
+			print("You Lose")
+			return
+    
 roll_dice(6)
